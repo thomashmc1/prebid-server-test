@@ -61,5 +61,6 @@ func newAdapterMap(client *http.Client, cfg *config.Configuration, infos adapter
 			infos[string(openrtb_ext.BidderRubicon)]), client),
 		openrtb_ext.BidderSomoaudience: adaptBidder(adapters.EnforceBidderInfo(somoaudience.NewSomoaudienceBidder(cfg.Adapters[string(openrtb_ext.BidderSomoaudience)].Endpoint), infos[string(openrtb_ext.BidderSomoaudience)]), client),
 		openrtb_ext.BidderSovrn:        adaptBidder(adapters.EnforceBidderInfo(sovrn.NewSovrnBidder(client, cfg.Adapters[string(openrtb_ext.BidderSovrn)].Endpoint), infos[string(openrtb_ext.BidderSovrn)]), client),
+		openrtb_ext.BidderTtacross:     adaptBidder(adapters.EnforceBidderInfo(ttacross.NewTtxAcrossBidder(cfg.Adapters[string(openrtb_ext.BidderTtacross)].Endpoint), infos[string(openrtb_ext.BidderTtacross)]), client),
 	}
 }
